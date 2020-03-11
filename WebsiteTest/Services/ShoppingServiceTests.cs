@@ -10,7 +10,7 @@ namespace WebsiteTest
         public void Test1()
         {
             var shoppingService = new ShoppingService(null);
-            Assert.True(1 == 1);
+            Assert.True(1 == 2);
         }
     }
 }
