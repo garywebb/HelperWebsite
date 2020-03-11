@@ -1,24 +1,22 @@
-<h1>Weather forecast</h1>
+<h1>Shopping List</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p *ngIf="!shoppingItems"><em>Loading...</em></p>
 
-<p *ngIf="!forecasts"><em>Loading...</em></p>
-
-<table class='table' *ngIf="forecasts">
+<table class='table' *ngIf="shoppingItems">
   <thead>
     <tr>
-      <th>Date</th>
-      <th>Temp. (C)</th>
-      <th>Temp. (F)</th>
-      <th>Summary</th>
+      <th>Qauntity</th>
+      <th>Quantity Type</th>
+      <th>Name</th>
+      <th>Recipes</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.dateFormatted }}</td>
-      <td>{{ forecast.temperatureC }}</td>
-      <td>{{ forecast.temperatureF }}</td>
-      <td>{{ forecast.summary }}</td>
+    <tr *ngFor="let shoppingItem of shoppingItems">
+      <td>{{ shoppingItem.ingredient.quantity }}</td>
+      <td>{{ shoppingItem.ingredient.quantityType }}</td>
+      <td>{{ shoppingItem.ingredient.name }}</td>
+      <td>{{ shoppingItem.recipeNames.join('; ') }}</td>
     </tr>
   </tbody>
 </table>
